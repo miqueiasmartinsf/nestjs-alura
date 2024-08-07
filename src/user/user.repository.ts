@@ -1,5 +1,7 @@
-import { User } from './models/User';
+import { Injectable } from '@nestjs/common';
+import { User } from '../entities/User';
 
+@Injectable()
 export class UserRepository {
     users: User[] = [];
 
@@ -7,5 +9,9 @@ export class UserRepository {
         this.users.push(data);
 
         console.log(this.users);
+    }
+
+    async findAll(): Promise<User[]> {
+        return this.users;
     }
 }

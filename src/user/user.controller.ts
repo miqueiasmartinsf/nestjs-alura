@@ -1,8 +1,9 @@
 import { Controller, Post, Body, Get } from '@nestjs/common';
 
 import { UserRepository } from './user.repository';
-import { User } from '../entities/User';
+import { User } from '../models/User';
 import { CreateUserDTO } from './dto/create-user.dto';
+import { LoginUserDTO } from './dto/login-user.dto';
 
 @Controller('/users')
 export class UserController {
@@ -14,6 +15,9 @@ export class UserController {
 
         return userData;
     }
+
+    @Post()
+    async loginUser(@Body() userData: LoginUserDTO): Promise<void> {}
 
     @Get()
     async findUsers(): Promise<User[]> {

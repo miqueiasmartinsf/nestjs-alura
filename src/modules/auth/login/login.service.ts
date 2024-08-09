@@ -6,7 +6,5 @@ import { IUserRepository } from 'src/interfaces/IUserRepository';
 export class LoginService {
     constructor(private readonly userRepository: IUserRepository) {}
 
-    async execute(loginData: LoginUserDTO) {
-        const userExists = this.userRepository.findById();
-    }
+    async execute(loginData: LoginUserDTO) {}
 }

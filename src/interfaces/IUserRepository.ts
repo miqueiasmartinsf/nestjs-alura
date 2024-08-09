@@ -1,7 +1,9 @@
+import { User } from 'src/models/user';
+
 export interface IUserRepository {
-    findAll(): Promise<void>;
+    findAll(): Promise<User | void>;
 
-    findById(id: string): Promise<void>;
+    findById(id: string): Promise<User | void>;
 
-    findByEmail(email: string): Promise<void>;
+    findByEmail(email: string): Promise<User | void>;
 }

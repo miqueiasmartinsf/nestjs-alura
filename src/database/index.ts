@@ -1,4 +1,4 @@
-const { Sequelize } = require('sequelize');
+import { Sequelize } from 'sequelize';
 
 export const sequelizeConnection = new Sequelize(
     'mysql://root:root@localhost:3306/ecommerce-db',

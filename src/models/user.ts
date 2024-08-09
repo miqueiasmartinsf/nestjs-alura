@@ -1,11 +1,27 @@
-export class User {
+import { randomUUID } from 'crypto';
+
+interface IUserData {
+    id?: string;
     name: string;
     email: string;
     password: string;
+    refreshToken?: string;
+    accessToken?: string;
+}
+export class User {
+    id: string;
+    name: string;
+    email: string;
+    password: string;
+    refreshToken?: string;
+    accessToken?: string;
 
-    constructor(name: string, email: string, password: string) {
-        this.email = email;
-        this.name = name;
-        this.password = password;
+    constructor(data: IUserData) {
+        this.id = data.id ?? randomUUID();
+        this.email = data.email;
+        this.name = data.name;
+        this.password = data.password;
+        this.accessToken = data.accessToken;
+        this.refreshToken = data.refreshToken;
     }
 }
